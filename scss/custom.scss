@@ -1,0 +1,112 @@
+// Minha primeira experiência com scss ----- legal!
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$theme-color: #d52856;
+$primary: $theme-color !default;
+
+$theme-colors: (
+    "primary": $theme-color,
+);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../bootstrap/scss/buttons";
+@import "../bootstrap/scss/card";
+
+// 8. Add additional custom code here
+.logo {
+    max-width: 100px;
+    margin: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+//Carrossel
+.carousel-item {
+    background-color: black;
+}
+
+.carousel-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    object-position: 100% 15%;
+}
+
+//Marketing
+.marketing-img {
+    width: 140px;
+    height: 140px;
+    transition: width 0.5s, height 0.5s;
+}
+
+.marketing-img:hover {
+    width: 200px;
+    height: 200px;
+}
+
+//Parallax
+.parallax {
+    min-height: 300px;
+    height: 100%;
+    width: 100%;
+}
+
+.parallax-one {
+    background: url("../img/trilha.jpg") no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.parallax-two {
+    background: url("../img/treino-praia.jpg") no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.quote {
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 300px;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Rodapé
+footer {
+    margin-top: 0px;
+    padding: 20px;
+    background-color: rgb(8, 6, 6);
+}
+
+@media (max-width: 480px) {
+    .carousel-item > img {
+        object-position: 50% 50%;
+    }
+
+    .quote {
+        padding: 10px;
+        font-size: 1.3rem;
+    }
+
+    footer > div {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
